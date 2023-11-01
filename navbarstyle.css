@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Megrim&family=Oswald:wght@400;500;600&family=VT323&display=swap');
+
+body{
+    background-color:#45474B;
+    color: #F5F7F8;
+    font-family: 'Oswald', sans-serif;
+}
+#container{
+    transition: 1s all ease-in-out;
+}
+#container.menuopen{
+    filter: blue(8px);
+    transform: scale((1.1));
+}
+
+section{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    background-size: cover;
+    padding: 50px;
+}
+
+section:after{
+    content: "";
+    position: absolute;
+    background-color: #45474B;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+
+}
+
+section h1{
+    font-size: 120px;
+    z-index: 2;
+}
+
+header{
+    z-index: 9999;
+    position: relative;
+}
+
+
+header #logo{
+    position: fixed;
+    top: 30px;
+    left: 0;
+    right: 0;
+    width: 70px;
+    height: auto;
+    margin: 0 auto;
+    opacity: 0.75;
+    transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1)0.1s;
+
+}
+header nav{
+    height: 80px;
+    display: flex;
+    align-items:center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 360px;
+    z-index: 100;
+    top: 130px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0, 1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px) ;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1)0.2s;
+
+}
+
+header nav a{
+    color: #FFE5E5;
+    font-family: 'VT323' ;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 12px 18px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    transition: 0.3s all cubic-bezier(0.075, 0.82, 0.165, 1)  0.6s, 0.3s;
+
+}
+
+header nav a:hover{
+    color: #27005D;
+    text-shadow:0 0 10px #A6F6FF;
+    transform: scale(1.1);
+}
+
+header nav button{
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0, 0.1);
+    width: 60px;
+    height: 60px;
+    backdrop-filter: blur(5px) ;
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: absolute;
+    z-index: 100;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+    border-radius: 10px;
+    cursor: pointer;
+    transform: scale(0);
+    transition: 0.3s all cubic-bezier(0.075, 0.82, 0.165, 1)0.2s;
+    }
+
+    header nav button span{
+        width: 50%;
+        background-color: #fff;
+        height: 3px;
+        margin: 4px auto;
+        display: block;
+        transform: scale(0);
+        transition: 0.6s transform cubic-bezier(0.075, 0.82, 0.165, 1) 0, 0.3s margin ease-in 0s;
+    }
+
+    header nav button:hover span{
+        margin: 9px auto;
+
+    }
+
+    header.sticky #logo{
+        opacity: 0;
+    }
+    header.sitcky nav{
+        top: 10px;
+        padding: 0;
+        width: 80;
+        height: 90;
+    }
+    header.sticky nav button{
+        transform: scale(1);
+        transition-delay: 0.1s;
+    }
+
+    header.sticky nav button span{
+        transform: scale(1);
+        transition: 0.6s transform cubic-bezier(0.075, 0.82, 0.165, 1)0.6s, 0.3s margin ease-in 0s;
+    }
+
+header.sticky nav a{
+    opacity: 0;
+    transform: scale(0.3);
+    transition-delay: 0.1s;
+    
+}
+   @media screen and (max-width: 520px){
+
+    header nav{
+        height: 60px;
+        width: 390px;
+    }
+    header nav button{
+        width: 50px;
+        height: 50px;
+    }
+
+    header nav a{
+        font-size: 18px;
+
+    }
+    section h1{
+        font-size: 80px;
+    }
+
+    header.sticky nav{
+        width: 70px;
+        height: 70px;
+    }
+
+   }
+   
